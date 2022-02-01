@@ -1,14 +1,15 @@
 {
   "name": "guardar",
   "version": "1.0.0",
-  "description": "Save your data",
+  "description": "A simple lob to deal and organize the localstorage",
   "author": "201flaviosilva",
   "main": "rollup.config.js",
   "scripts": {
     "clear": "rm -rf dist",
     "build": "npm run clear && rollup -c",
-    "test": "node test/spec",
-    "pretest": "npm run build"
+    "test": "echo \"No test\"",
+    "pretest": "npm run build",
+    "np": "np"
   },
   "dependencies": {},
   "devDependencies": {
