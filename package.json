@@ -1,6 +1,6 @@
 {
   "name": "guardar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple lob to deal and organize the localstorage",
   "author": "201flaviosilva",
   "main": "dist/Guardar.cjs.js",
