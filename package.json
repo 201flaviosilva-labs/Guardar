@@ -1,6 +1,6 @@
 {
   "name": "guardar",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Save your data",
   "author": "201flaviosilva",
   "main": "rollup.config.js",
