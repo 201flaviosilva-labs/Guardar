@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "A simple lob to deal and organize the localstorage",
   "author": "201flaviosilva",
-  "main": "rollup.config.js",
+  "main": "dist/Guardar.cjs.js",
   "scripts": {
     "clear": "rm -rf dist",
     "build": "npm run clear && rollup -c",
