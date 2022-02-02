@@ -3,18 +3,20 @@
   "version": "1.0.2",
   "description": "A simple lob to deal and organize the localstorage",
   "author": "201flaviosilva",
+  "homepage": "https://201flaviosilva.github.io/Guardar/",
   "main": "dist/Guardar.cjs.js",
   "scripts": {
     "clear": "rm -rf dist",
     "build": "npm run clear && rollup -c",
     "test": "echo \"No test\"",
     "pretest": "npm run build",
-    "np": "np"
+    "np": "np",
+    "jsdoc": "jsdoc src/Guardar.js -d ./docs"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
+    "jsdoc": "^3.6.10",
     "rollup": "^2.61.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -24,6 +26,13 @@
     "dist",
     "src"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/201flaviosilva/Guardar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/201flaviosilva/Guardar/issues"
+  },
   "keywords": [],
   "license": "MIT"
 }
