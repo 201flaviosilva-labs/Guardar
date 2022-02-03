@@ -7,11 +7,13 @@
   "main": "dist/Guardar.cjs.js",
   "scripts": {
     "clear": "rm -rf dist",
-    "build": "npm run clear && rollup -c",
+    "build": "rollup -c",
     "test": "echo \"No test\"",
     "pretest": "npm run build",
     "np": "np",
-    "jsdoc": "jsdoc src/Guardar.js -d ./docs"
+    "jsdoc": "jsdoc src/Guardar.js -d ./dist",
+    "predeploy": "npm run build && npm run jsdoc",
+    "deploy": "gh-pages -d dist && npm run clear"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
@@ -34,5 +36,8 @@
     "url": "https://github.com/201flaviosilva/Guardar/issues"
   },
   "keywords": [],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
 }
