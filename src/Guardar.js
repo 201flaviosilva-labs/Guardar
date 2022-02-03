@@ -25,23 +25,23 @@ export function getAll() {
 /**
  * Get a specific data saved in the local storage
  * 
- * @param {string} name key of the data to get
+ * @param {string} key key of the data to get
  * @returns {any} the data saved in the local storage
  */
-export function getData(name) {
+export function getData(key) {
 	let data = getAll();
-	return data[name];
+	return data[key];
 }
 
 /**
- * Save/change a specific data by name
+ * Save/change a specific data by key
  * 
- * @param {string} name name of the key
+ * @param {string} key name of the key
  * @param {any} value value of the item
  */
-export function setData(name, value) {
+export function setData(key, value) {
 	let saveData = getAll();
-	saveData[name] = value;
+	saveData[key] = value;
 	updateAll(saveData);
 }
 
@@ -57,11 +57,11 @@ export function updateAll(data) {
 /**
  * Delete a specific data by name
  * 
- * @param {sting} name the name of the data to delete
+ * @param {sting} key the name of the data to delete
  */
-export function removeData(name) {
+export function removeData(key) {
 	let saveData = getAll();
-	delete saveData[name];
+	delete saveData[key];
 	updateAll(saveData);
 }
 

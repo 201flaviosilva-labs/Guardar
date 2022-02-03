@@ -1,10 +1,10 @@
 {
   "name": "guardar",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A simple lob to deal and organize the localstorage",
   "author": "201flaviosilva",
   "homepage": "https://201flaviosilva.github.io/Guardar/",
-  "main": "dist/Guardar.cjs.js",
+  "main": "dist/lib/Guardar.cjs.js",
   "scripts": {
     "clear": "rm -rf dist",
     "build": "rollup -c",
