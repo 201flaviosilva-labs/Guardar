@@ -123,7 +123,6 @@ const Guardar = {
 	keys,
 	size,
 	has,
-	print,
 };
 
 export default Guardar;
