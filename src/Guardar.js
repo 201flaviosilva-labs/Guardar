@@ -111,6 +111,17 @@ export function has(key) { return keys().includes(key); }
  */
 export function isEmpty() { return size() === 0; }
 
+/**
+ * Get version number
+ * 
+ * @param {number} pjson package.json file
+ * @returns {number} number of current version 
+ */
+export function getVersion() {
+	var pjson = require('../package.json');
+	return(pjson.version);
+}
+
 const Guardar = {
 	init,
 	getAll,
@@ -124,6 +135,7 @@ const Guardar = {
 	size,
 	has,
 	isEmpty,
+	getVersion,
 };
 
 export default Guardar;
