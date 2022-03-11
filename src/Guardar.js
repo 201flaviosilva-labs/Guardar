@@ -114,7 +114,6 @@ export function isEmpty() { return size() === 0; }
 /**
  * Get version number
  * 
- * @param {number} pjson package.json file
  * @returns {number} number of current version 
  */
 export function getVersion() {
