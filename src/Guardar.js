@@ -117,7 +117,7 @@ export function isEmpty() { return size() === 0; }
  * @returns {number} number of current version 
  */
 export function getVersion() {
-	return("1.0.5");
+	return"1.0.5";
 }
 
 const Guardar = {
