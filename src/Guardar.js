@@ -111,6 +111,15 @@ export function has(key) { return keys().includes(key); }
  */
 export function isEmpty() { return size() === 0; }
 
+/**
+ * Get version number
+ * 
+ * @returns {string} string of current version 
+ */
+export function getVersion() {
+	return"1.0.5";
+}
+
 const Guardar = {
 	init,
 	getAll,
@@ -124,6 +133,7 @@ const Guardar = {
 	size,
 	has,
 	isEmpty,
+	getVersion,
 };
 
 export default Guardar;

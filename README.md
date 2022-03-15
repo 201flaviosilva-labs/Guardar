@@ -182,6 +182,17 @@ Check if the local storage is empty
 Guardar.isEmpty("myKey");
 ```
 
+### Get Version
+
+Get the current version of the program.
+
+ - Returns {number}: Number of current version.
+ 
+
+ ```javascript
+Guardar.getVersion();
+```
+
 ### Table of Contents
 
 | Name               | Description                         | param 1                             | param 2     | return   |
@@ -198,3 +209,4 @@ Guardar.isEmpty("myKey");
 | size               | Get number of items                 | -                                   | -           | number   |
 | has                | Check if a key is stored            | key {string}                        | -           | boolean  |
 | isEmpty            | Check if the local storage is empty | -                                   | -           | boolean  |
+| getVersion         | Get number of current version       | -                                   | -           | number   |
