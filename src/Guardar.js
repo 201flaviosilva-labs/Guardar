@@ -114,7 +114,7 @@ export function isEmpty() { return size() === 0; }
 /**
  * Get version number
  * 
- * @returns {number} number of current version 
+ * @returns {string} string of current version 
  */
 export function getVersion() {
 	return"1.0.5";
