@@ -1,65 +1,305 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+<!doctype html>
+<html>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+<head>
+  <meta name="generator" content="JSDoc 3.6.10">
+  <meta charset="utf-8">
+  <title>guardar 1.0.5 &raquo; Home</title>
+  <link rel="stylesheet" href="https://brick.a.ssl.fastly.net/Karla:400,400i,700,700i" type="text/css">
+  <link rel="stylesheet" href="https://brick.a.ssl.fastly.net/Noto+Serif:400,400i,700,700i" type="text/css">
+  <link rel="stylesheet" href="https://brick.a.ssl.fastly.net/Inconsolata:500" type="text/css">
+  <link href="css/baseline.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="prettyPrint()">
+  <nav id="jsdoc-navbar" role="navigation" class="jsdoc-navbar">
+    <div id="jsdoc-navbar-container">
+      <div id="jsdoc-navbar-content">
+        <a href="index.html" class="jsdoc-navbar-package-name">guardar 1.<wbr>0.<wbr>5</a>
+      </div>
+    </div>
+  </nav>
+  <div id="jsdoc-body-container">
+    <div id="jsdoc-content">
+      <div id="jsdoc-content-container">
+        <div id="jsdoc-banner" role="banner">
+        </div>
+        <div id="jsdoc-main" role="main">
+          <header class="page-header">
+            <h1>
+              guardar 1.0.5
+            </h1>
+          </header>
+          <article>
+            <h1>Guardar</h1>
+            <h2>Description</h2>
+            <p>A simple lib to work and organize the localstorage.</p>
+            <p><a href="https://www.npmjs.com/package/guardar"><img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&amp;logo=npm&amp;logoColor=white" alt="NPM"></a></p>
+            <h2>Instal</h2>
+            <blockquote>
+              <p>npm install guardar</p>
+            </blockquote>
+            <h2>Simple Usage</h2>
+            <pre class="prettyprint source lang-javascript"><code>import Guardar from &quot;guardar&quot;;
 
-<div id="main">
+const myData = {
+	myString: &quot;Hello World&quot;,
+	myNumber: 123,
+	myBoolean: true,
+	myArray: [1, false, &quot;Beep&quot;],
+	myObject: {
+		name: &quot;Dog&quot;,
+		age: 3,
+		isHappy: true,
+		breed: &quot;Dachshund&quot;,
+	}
+}
 
-    <h1 class="page-title">Home</h1>
+// To start the localstorage
+Guardar.init();
 
-    
+// Save the data
+Guardar.setData(&quot;myData&quot;, myData);
 
+// Get you data
+console.log(Guardar.getData(&quot;myData&quot;));
 
+</code></pre>
+            <h2>API</h2>
+            <h4>Import</h4>
+            <p>Import the lib to your project:</p>
+            <pre class="prettyprint source lang-javascript"><code>import Guardar from &quot;guardar&quot;;
+</code></pre>
+            <h4>Init</h4>
+            <p>For the Guardar to work correctly it is necessary to boot it, and for that it is done with this command:</p>
+            <ul>
+              <li>Parameter 1 {string} [newSaveDataName] (optional): The name of the localstorage.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>Guardar.init(&quot;myLocalStorage&quot;);
+</code></pre>
+            <h4>Get All</h4>
+            <p>Get all data saved in the local storage</p>
+            <ul>
+              <li>Returns {any}: A object with all the data saved in the localstorage.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>Guardar.getAll();
+</code></pre>
+            <h4>Get Data</h4>
+            <p>Get a specific data saved in the local storage</p>
+            <ul>
+              <li>Parameter 1 {string} [key]: The key of the data.</li>
+              <li>Returns {any}: The data saved in the localstorage of the specified key.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>Guardar.getData(&quot;myKey&quot;);
+</code></pre>
+            <h4>Set Data</h4>
+            <p>Save/change a specific data by key</p>
+            <ul>
+              <li>Parameter 1 {string} [key]: The key of the data.</li>
+              <li>Parameter 2 {any} [value]: The data to save.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>// Add new data
+Guardar.setData(&quot;myKeyString&quot;, &quot;myString&quot;);
+Guardar.setData(&quot;myKeyBool&quot;, true);
+Guardar.setData(&quot;myKeyNumber&quot;, 1234567890);
+Guardar.setData(&quot;myKeyObject&quot;, {name: &quot;Dog&quot;, age: 3,});
+Guardar.setData(&quot;myKeyArr&quot;, [1, 2, 3, 4, 5]);
 
-    
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-</div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#changeSaveDataName">changeSaveDataName</a></li><li><a href="global.html#clear">clear</a></li><li><a href="global.html#getAll">getAll</a></li><li><a href="global.html#getData">getData</a></li><li><a href="global.html#getVersion">getVersion</a></li><li><a href="global.html#has">has</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#keys">keys</a></li><li><a href="global.html#removeData">removeData</a></li><li><a href="global.html#saveDataName">saveDataName</a></li><li><a href="global.html#setData">setData</a></li><li><a href="global.html#size">size</a></li><li><a href="global.html#updateAll">updateAll</a></li></ul>
-</nav>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri May 06 2022 16:27:09 GMT+0000 (Coordinated Universal Time)
-</footer>
-
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+// Update
+Guardar.setData(&quot;myKeyString&quot;, &quot;My String	Updated&quot;);
+Guardar.setData(&quot;myKeyBool&quot;, false);
+Guardar.setData(&quot;myKeyNumber&quot;, 0987654321);
+Guardar.setData(&quot;myKeyObject&quot;, {name: &quot;Fox&quot;, age: 1, isHappy: true});
+Guardar.setData(&quot;myKeyArr&quot;, [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;]);
+</code></pre>
+            <h4>Update All</h4>
+            <p>Save/change all data saved</p>
+            <ul>
+              <li>Parameter 1 {any} [data]: The data to save.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>const newData = { otherNewData: &quot;Hello World&quot; };
+Guardar.updateAll(newData);
+</code></pre>
+            <h4>Remove Data</h4>
+            <p>Delete a specific data by key</p>
+            <ul>
+              <li>Parameter 1 {string} [key]: The name of the data.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>Guardar.removeData(&quot;myKey&quot;);
+</code></pre>
+            <h4>Change Save Data Name</h4>
+            <p>Change the name of the local storage</p>
+            <ul>
+              <li>Parameter 1 {string} [newSaveDataName]: The new name of the localstorage.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>Guardar.changeSaveDataName(&quot;myNewLocalStorageName&quot;);
+</code></pre>
+            <h4>Clear</h4>
+            <p>Delete all data saved in the local storage</p>
+            <pre class="prettyprint source lang-javascript"><code>Guardar.clear();
+</code></pre>
+            <h4>Keys</h4>
+            <p>Get keys of the stored items</p>
+            <ul>
+              <li>Returns {string[]}: An array with all the keys saved in the localstorage.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>Guardar.keys();
+</code></pre>
+            <h4>Size</h4>
+            <p>Get number of stored items</p>
+            <ul>
+              <li>Returns {number}: Number of stored items.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>Guardar.size();
+</code></pre>
+            <h4>Has</h4>
+            <p>Check if the given key is stored</p>
+            <ul>
+              <li>Parameter 1 {string} [key]: The key to check.</li>
+              <li>Returns {boolean}: True if the key is stored, false if not.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>Guardar.has(&quot;myKey&quot;);
+</code></pre>
+            <h4>Is Empty</h4>
+            <p>Check if the local storage is empty</p>
+            <ul>
+              <li>Returns {boolean}: True if the local storage is empty.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>Guardar.isEmpty(&quot;myKey&quot;);
+</code></pre>
+            <h3>Get Version</h3>
+            <p>Get the current version of the program.</p>
+            <ul>
+              <li>Returns {number}: Number of current version.</li>
+            </ul>
+            <pre class="prettyprint source lang-javascript"><code>Guardar.getVersion();
+</code></pre>
+            <h3>Table of Contents</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>param 1</th>
+                  <th>param 2</th>
+                  <th>return</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>init</td>
+                  <td>Start Guardar</td>
+                  <td>newSaveDataName {string} (optional)</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>getAll</td>
+                  <td>Get all data</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>any</td>
+                </tr>
+                <tr>
+                  <td>getData</td>
+                  <td>Get the items of a key</td>
+                  <td>key {string}</td>
+                  <td>-</td>
+                  <td>any</td>
+                </tr>
+                <tr>
+                  <td>setData</td>
+                  <td>Save/change a key</td>
+                  <td>key {string}</td>
+                  <td>value {any}</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>updateAll</td>
+                  <td>Save/change all data</td>
+                  <td>data {any}</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>removeData</td>
+                  <td>Delete a key</td>
+                  <td>key {string}</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>changeSaveDataName</td>
+                  <td>Change the name of the localstorage</td>
+                  <td>newSaveDataName {string}</td>
+                  <td>-</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>clear</td>
+                  <td>Delete all data</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>keys</td>
+                  <td>Get all keys</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>string[]</td>
+                </tr>
+                <tr>
+                  <td>size</td>
+                  <td>Get number of items</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>number</td>
+                </tr>
+                <tr>
+                  <td>has</td>
+                  <td>Check if a key is stored</td>
+                  <td>key {string}</td>
+                  <td>-</td>
+                  <td>boolean</td>
+                </tr>
+                <tr>
+                  <td>isEmpty</td>
+                  <td>Check if the local storage is empty</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>boolean</td>
+                </tr>
+                <tr>
+                  <td>getVersion</td>
+                  <td>Get number of current version</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>number</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+          <div class="symbol-index">
+          </div>
+        </div>
+      </div>
+      <nav id="jsdoc-toc-nav" role="navigation"></nav>
+    </div>
+  </div>
+  <footer id="jsdoc-footer" class="jsdoc-footer">
+    <div id="jsdoc-footer-container">
+      <p>
+        Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc</a> 3.6.10 on May 27, 2022.
+      </p>
+    </div>
+  </footer>
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/tree.jquery.js"></script>
+  <script src="scripts/prettify.js"></script>
+  <script src="scripts/jsdoc-toc.js"></script>
+  <script src="scripts/linenumber.js"></script>
+  <script src="scripts/scrollanchor.js"></script>
 </body>
+
 </html>

@@ -1,44 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JSDoc: Source: Guardar.js</title>
+<!doctype html>
+<html>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+<head>
+  <meta name="generator" content="JSDoc 3.6.10">
+  <meta charset="utf-8">
+  <title>guardar 1.0.5 &raquo; Source: Guardar.js</title>
+  <link rel="stylesheet" href="https://brick.a.ssl.fastly.net/Karla:400,400i,700,700i" type="text/css">
+  <link rel="stylesheet" href="https://brick.a.ssl.fastly.net/Noto+Serif:400,400i,700,700i" type="text/css">
+  <link rel="stylesheet" href="https://brick.a.ssl.fastly.net/Inconsolata:500" type="text/css">
+  <link href="css/baseline.css" rel="stylesheet">
 </head>
 
-<body>
-
-<div id="main">
-
-    <h1 class="page-title">Source: Guardar.js</h1>
-
-    
-
-
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @type {string} saveDataName
+<body onload="prettyPrint()">
+  <nav id="jsdoc-navbar" role="navigation" class="jsdoc-navbar">
+    <div id="jsdoc-navbar-container">
+      <div id="jsdoc-navbar-content">
+        <a href="index.html" class="jsdoc-navbar-package-name">guardar 1.<wbr>0.<wbr>5</a>
+      </div>
+    </div>
+  </nav>
+  <div id="jsdoc-body-container">
+    <div id="jsdoc-content">
+      <div id="jsdoc-content-container">
+        <div id="jsdoc-banner" role="banner">
+        </div>
+        <div id="jsdoc-main" role="main">
+          <header class="page-header">
+            <h1>Source: Guardar.js</h1>
+          </header>
+          <article>
+            <pre class="prettyprint linenums"><code>/**
+ * The name o will show in the local storage object
+ * 
+ * @type {string}
  */
-export let saveDataName = "guardar";
+export let saveDataName &#x3D; &quot;guardar&quot;;
 
 /**
  * Start the local storage
  * 
  * @param {string} newSaveDataName the name to save the data in the local storage
  */
-export function init(newSaveDataName = saveDataName) {
-	saveDataName = newSaveDataName;
-	localStorage.getItem(saveDataName) || localStorage.setItem(saveDataName, "{}");
+export function init(newSaveDataName &#x3D; saveDataName) {
+	saveDataName &#x3D; newSaveDataName;
+	localStorage.getItem(saveDataName) || localStorage.setItem(saveDataName, &quot;{}&quot;);
 }
 
 /**
@@ -57,7 +62,7 @@ export function getAll() {
  * @returns {any} the data saved in the local storage
  */
 export function getData(key) {
-	let data = getAll();
+	let data &#x3D; getAll();
 	return data[key];
 }
 
@@ -68,8 +73,8 @@ export function getData(key) {
  * @param {any} value value of the item
  */
 export function setData(key, value) {
-	let saveData = getAll();
-	saveData[key] = value;
+	let saveData &#x3D; getAll();
+	saveData[key] &#x3D; value;
 	updateAll(saveData);
 }
 
@@ -88,7 +93,7 @@ export function updateAll(data) {
  * @param {sting} key the name of the data to delete
  */
 export function removeData(key) {
-	let saveData = getAll();
+	let saveData &#x3D; getAll();
 	delete saveData[key];
 	updateAll(saveData);
 }
@@ -98,8 +103,8 @@ export function removeData(key) {
  * 
  * @param {sting} name new name of the local storage
  */
-export function changeSaveDataName(name = saveDataName) {
-	let saveData = getAll();
+export function changeSaveDataName(name &#x3D; saveDataName) {
+	let saveData &#x3D; getAll();
 	localStorage.removeItem(saveDataName);
 	init(name);
 	updateAll(saveData);
@@ -137,7 +142,7 @@ export function has(key) { return keys().includes(key); }
  * 
  * @returns {boolean} true if the local storage is empty
  */
-export function isEmpty() { return size() === 0; }
+export function isEmpty() { return size() &#x3D;&#x3D;&#x3D; 0; }
 
 /**
  * Get version number
@@ -145,10 +150,10 @@ export function isEmpty() { return size() === 0; }
  * @returns {string} string of current version 
  */
 export function getVersion() {
-	return"1.0.5";
+	return &quot;1.0.5&quot;;
 }
 
-const Guardar = {
+const Guardar &#x3D; {
 	init,
 	getAll,
 	getData,
@@ -166,25 +171,25 @@ const Guardar = {
 
 export default Guardar;
 </code></pre>
-        </article>
-    </section>
-
-
-
-
-</div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#changeSaveDataName">changeSaveDataName</a></li><li><a href="global.html#clear">clear</a></li><li><a href="global.html#getAll">getAll</a></li><li><a href="global.html#getData">getData</a></li><li><a href="global.html#getVersion">getVersion</a></li><li><a href="global.html#has">has</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#keys">keys</a></li><li><a href="global.html#removeData">removeData</a></li><li><a href="global.html#saveDataName">saveDataName</a></li><li><a href="global.html#setData">setData</a></li><li><a href="global.html#size">size</a></li><li><a href="global.html#updateAll">updateAll</a></li></ul>
-</nav>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri May 06 2022 16:27:09 GMT+0000 (Coordinated Universal Time)
-</footer>
-
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+          </article>
+        </div>
+      </div>
+      <nav id="jsdoc-toc-nav" role="navigation"></nav>
+    </div>
+  </div>
+  <footer id="jsdoc-footer" class="jsdoc-footer">
+    <div id="jsdoc-footer-container">
+      <p>
+        Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc</a> 3.6.10 on May 27, 2022.
+      </p>
+    </div>
+  </footer>
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/tree.jquery.js"></script>
+  <script src="scripts/prettify.js"></script>
+  <script src="scripts/jsdoc-toc.js"></script>
+  <script src="scripts/linenumber.js"></script>
+  <script src="scripts/scrollanchor.js"></script>
 </body>
+
 </html>
