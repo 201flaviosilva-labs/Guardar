@@ -2,7 +2,7 @@ import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 
-const buildFolder = "dist/lib/"; // used for deploy in github pages
+const buildFolder = "dist/"; // used for deploy in github pages
 
 const umd = {
 	input: "src/Guardar.js",

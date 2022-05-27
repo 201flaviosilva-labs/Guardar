@@ -7,19 +7,18 @@
   "main": "dist/lib/Guardar.cjs.js",
   "scripts": {
     "clear": "rm -rf dist",
-    "build": "npm run clear && rollup -c",
+    "build": "npm run clear && npm run jsDoc && npm run types && rollup -c",
+    "jsDoc": "jsdoc -c jsdoc.conf.json",
+    "types": "npx -p typescript tsc src/**.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "test": "echo \"No test\"",
     "pretest": "npm run build",
-    "np": "np",
-    "jsdoc": "jsdoc src/Guardar.js -d ./dist",
-    "predeploy": "npm run build && npm run jsdoc",
-    "deploy": "gh-pages -d dist"
+    "np": "np"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
-    "gh-pages": "^3.2.3",
     "jsdoc": "^3.6.10",
+    "jsdoc-baseline": "^0.1.5",
     "rollup": "^2.61.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",

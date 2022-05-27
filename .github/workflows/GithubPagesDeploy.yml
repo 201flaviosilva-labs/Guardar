@@ -1,14 +1,12 @@
-# Tutorial: https://www.youtube.com/watch?v=5I37iVCDUTU
-
 name: Github Pages Deploy
 
 on:
   push:
     branches:
-      - "main"
+      - main
   pull_request:
     branches:
-      - "main"
+      - main
 
 jobs:
   build:
@@ -16,17 +14,17 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [16.x]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
 
       - name: Install and build
-        run: npm install && npm run predeploy
+        run: npm install && npm run jsDoc
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+          folder: docs # The folder the action should deploy.

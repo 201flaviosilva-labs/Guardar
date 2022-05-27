@@ -1,5 +1,7 @@
 /**
- * @type {string} saveDataName
+ * The name o will show in the local storage object
+ * 
+ * @type {string}
  */
 export let saveDataName = "guardar";
 
@@ -117,7 +119,7 @@ export function isEmpty() { return size() === 0; }
  * @returns {string} string of current version 
  */
 export function getVersion() {
-	return"1.0.5";
+	return "1.0.5";
 }
 
 const Guardar = {
