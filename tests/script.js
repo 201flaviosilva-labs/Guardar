@@ -1,5 +1,4 @@
 import Guardar from "../../src/guardar.js";
-// import Guardar from "../../dist/lib/Guardar.esm.js";
 
 // Check if are in Random
 const URLParams = new URLSearchParams(window.location.search);

@@ -1,0 +1,28 @@
+_ignore
+
+# tests
+jest.config.js
+tests
+coverage
+
+# build tools
+.travis.yml
+.jenkins.yml
+.codeclimate.yml
+
+# linters
+.jscsrc
+.jshintrc
+.eslintrc*
+
+# editor settings
+.idea
+.editorconfig
+.vscode/
+
+# misc
+.github/
+CODE_OF_CONDUCT.md
+node_modules/
+jsdoc.conf.json
+wiki/
