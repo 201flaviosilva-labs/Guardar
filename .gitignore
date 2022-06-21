@@ -1,5 +1,6 @@
 _ignore
 dist
+docs
 
 # Logs
 logs
