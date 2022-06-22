@@ -7,9 +7,9 @@
   "main": "build/Guardar.js",
   "license": "MIT",
   "scripts": {
-    "clear": "rm -rf docs && rm -rf build",
+    "clear": "rm -rf docs && rm -rf build && rm -rf types",
     "jsDoc": "jsdoc -c jsdoc.conf.json",
-    "types": "npx -p typescript tsc src/**.js --declaration --allowJs --emitDeclarationOnly --outDir build",
+    "types": "npx -p typescript tsc src/**.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "compile": "webpack --mode production",
     "build": "npm run clear && npm run jsDoc && npm run compile && npm run types",
     "bump": "np"

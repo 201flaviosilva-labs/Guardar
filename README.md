@@ -179,7 +179,7 @@ Check if the local storage is empty
  - Returns {boolean}: True if the local storage is empty.
 
 ```javascript
-Guardar.isEmpty("myKey");
+Guardar.isEmpty();
 ```
 
 ### Get Version
