@@ -1,7 +1,7 @@
 {
   "name": "guardar",
   "version": "1.0.5",
-  "description": "A simple lib to deal and organize the localstorage",
+  "description": "A simple lib to work and organize the browser storage",
   "author": "201flaviosilva",
   "homepage": "https://201flaviosilva.github.io/Guardar/",
   "main": "build/Guardar.js",
@@ -27,7 +27,8 @@
   },
   "keywords": [
     "storage",
-    "localstorage"
+    "localstorage",
+    "sessionstorage"
   ],
   "repository": {
     "type": "git",
