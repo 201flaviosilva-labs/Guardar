@@ -29,7 +29,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: ./package.json
 const package_namespaceObject = {"i8":"1.0.5"};
-;// CONCATENATED MODULE: ./src/LocalStorage.js
+;// CONCATENATED MODULE: ./src/Local.js
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -261,7 +261,240 @@ var Local = /*#__PURE__*/function () {
 }();
 
 
+;// CONCATENATED MODULE: ./src/Session.js
+function Session_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Session_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Session_createClass(Constructor, protoProps, staticProps) { if (protoProps) Session_defineProperties(Constructor.prototype, protoProps); if (staticProps) Session_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+/**
+ * @class Session
+ * @classdesc Class for dealing with session storage.
+ * 
+ * @example Session.getAll();
+ */
+var Session = /*#__PURE__*/function () {
+  function Session() {
+    Session_classCallCheck(this, Session);
+
+    this.name = "guardar";
+
+    this._init();
+  }
+  /**
+   * Core function to initialize the session storage api
+   * 
+   * @returns {void}
+   * @memberof Session
+   * @private
+   */
+
+
+  Session_createClass(Session, [{
+    key: "_init",
+    value: function _init() {
+      sessionStorage.getItem(this.name) || sessionStorage.setItem(this.name, "{}");
+    }
+    /**
+     * Change the name of data saved in the Session storage
+     * 
+     * @example Session._init("mySessionStorage");
+     * 
+     * @param {string} newSaveDataName - the name to save the data in the Session storage
+     * @returns {void}
+     * @memberof Session
+     */
+
+  }, {
+    key: "setName",
+    value: function setName() {
+      var newSaveDataName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.name;
+      this.name = newSaveDataName;
+
+      this._init();
+    }
+    /**
+     * Get all data saved in the Session storage
+     * 
+     * @example Session.getAll();
+     * 
+     * @returns {object} the data saved in the Session storage
+     * @memberof Session
+     */
+
+  }, {
+    key: "getAll",
+    value: function getAll() {
+      return JSON.parse(sessionStorage.getItem(this.name));
+    }
+    /**
+     * Get a specific data saved in the Session storage
+     * 
+     * @example Session.getData("myKey");
+     * 
+     * @param {string} key - key of the data to get
+     * @returns {any} the data saved in the Session storage
+     * @memberof Session
+     */
+
+  }, {
+    key: "getData",
+    value: function getData(key) {
+      var data = this.getAll();
+      return data[key];
+    }
+    /**
+     * Save/change a specific data by key
+     * 
+     * @example Session.setData("myKeyString", "myString");
+     * @example Session.setData("myKeyBool", true);
+     * @example Session.setData("myKeyNumber", 1234567890);
+     * @example Session.setData("myKeyObject", {name: "Dog", age: 3,});
+     * @example Session.setData("myKeyArr", [1, 2, 3, 4, 5]);
+     * 
+     * @param {string} key - name of the key
+     * @param {any} value value of the item
+     * @returns {void}
+     * @memberof Session
+     */
+
+  }, {
+    key: "setData",
+    value: function setData(key, value) {
+      var saveData = this.getAll();
+      saveData[key] = value;
+      this.updateAll(saveData);
+    }
+    /**
+     * Save/change all data
+     * 
+     * @example Session.updateAll({ otherNewData: "Hello World" });
+     * 
+     * @param {any} data - data to save
+     * @returns {void}
+     * @memberof Session
+     */
+
+  }, {
+    key: "updateAll",
+    value: function updateAll(data) {
+      sessionStorage.setItem(this.name, JSON.stringify(data));
+    }
+    /**
+     * Delete a specific data by name
+     * 
+     * @example Session.removeData("myKey");
+     * 
+     * @param {sting} key - the name of the data to delete
+     * @returns {void}
+     * @memberof Session
+     */
+
+  }, {
+    key: "removeData",
+    value: function removeData(key) {
+      var saveData = this.getAll();
+      delete saveData[key];
+      this.updateAll(saveData);
+    }
+    /**
+     * Change the name of the Session storage
+     * 
+     * @example Session.changeSaveDataName("sessionStorageName");
+     * 
+     * @param {sting} name - new name of the Session storage
+     * @memberof Session
+     */
+
+  }, {
+    key: "changeSaveDataName",
+    value: function changeSaveDataName() {
+      var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.name;
+      var saveData = this.getAll();
+      sessionStorage.removeItem(this.name);
+      this.setName(name);
+      this.updateAll(saveData);
+    }
+    /**
+     * Delete all data saved in the Session storage
+     * 
+     * @example Session.clear();
+     * 
+     * @returns {void}
+     * @memberof Session
+     */
+
+  }, {
+    key: "clear",
+    value: function clear() {
+      this.updateAll({});
+    }
+    /**
+     * Get keys of the stored items
+     * 
+     * @example Session.keys();
+     * 
+     * @returns {string[]} return all keys
+     * @memberof Session
+     */
+
+  }, {
+    key: "keys",
+    value: function keys() {
+      return Object.keys(this.getAll());
+    }
+    /**
+     * Get number of stored items
+     * 
+     * @example Session.size();
+     * 
+     * @returns {number} number of stored items
+     * @memberof Session
+     */
+
+  }, {
+    key: "size",
+    value: function size() {
+      return this.keys().length;
+    }
+    /**
+     * Check if the given key is stored
+     * 
+     * @example Session.has("myKey");
+     * 
+     * @param {string} key - key to check
+     * @returns {boolean} true if the key is stored
+     * @memberof Session
+     */
+
+  }, {
+    key: "has",
+    value: function has(key) {
+      return this.keys().includes(key);
+    }
+    /**
+     * Check if the Session storage is empty
+     * 
+     * @example Session.isEmpty();
+     * 
+     * @returns {boolean} true if the Session storage is empty
+     * @memberof Session
+     */
+
+  }, {
+    key: "isEmpty",
+    value: function isEmpty() {
+      return this.size() === 0;
+    }
+  }]);
+
+  return Session;
+}();
+
+
 ;// CONCATENATED MODULE: ./src/index.js
+
 
 
 /**
@@ -276,7 +509,8 @@ function getVersion() {
 
 var Guardar = {
   getVersion: getVersion,
-  Local: new Local()
+  Local: new Local(),
+  Session: new Session()
 };
 /* harmony default export */ const src = (Guardar);
 var __webpack_exports__default = __webpack_exports__.Z;

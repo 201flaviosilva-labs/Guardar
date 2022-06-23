@@ -11,4 +11,6 @@
 
 ## 2.0.0 (Date: 00/00/2022)
 - (Add)
-  - 
+  - Create a api to work with the session storage API
+- (Fixed)
+  - Local storage API changes to a class
