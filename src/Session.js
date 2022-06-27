@@ -41,11 +41,14 @@ export default class Session {
 	 * 
 	 * @example Session.getAll();
 	 * 
+	 * @param {boolean} [json=false] - if true, return the data in json format
 	 * @returns {object} the data saved in the Session storage
 	 * @memberof Session
 	 */
 	getAll() {
-		return JSON.parse(sessionStorage.getItem(this.name));
+		if (typeof json !== "boolean") throw new Error("The json must be a boolean");
+		const data = sessionStorage.getItem(this.name);
+		return json ? data : JSON.parse(data);
 	}
 
 	/**

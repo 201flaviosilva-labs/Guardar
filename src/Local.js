@@ -41,11 +41,14 @@ export default class Local {
 	 * 
 	 * @example Local.getAll();
 	 * 
+	 * @param {boolean} [json=false] - if true, return the data in json format
 	 * @returns {object} the data saved in the local storage
 	 * @memberof Local
 	 */
-	getAll() {
-		return JSON.parse(localStorage.getItem(this.name));
+	getAll(json = false) {
+		if (typeof json !== "boolean") throw new Error("The json must be a boolean");
+		const data = localStorage.getItem(this.name);
+		return json ? data : JSON.parse(data);
 	}
 
 	/**
