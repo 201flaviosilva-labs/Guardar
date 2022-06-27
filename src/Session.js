@@ -31,6 +31,7 @@ export default class Session {
 	 * @memberof Session
 	 */
 	setName(newSaveDataName = this.name) {
+		if (typeof newSaveDataName !== "string") throw new Error("The name must be a string");
 		this.name = newSaveDataName;
 		this._init();
 	}
@@ -57,6 +58,7 @@ export default class Session {
 	 * @memberof Session
 	 */
 	getData(key) {
+		if (typeof key !== "string") throw new Error("The key must be a string");
 		let data = this.getAll();
 		return data[key];
 	}
@@ -71,11 +73,13 @@ export default class Session {
 	 * @example Session.setData("myKeyArr", [1, 2, 3, 4, 5]);
 	 * 
 	 * @param {string} key - name of the key
-	 * @param {any} value value of the item
+	 * @param {any} value - value of the item
 	 * @returns {void}
 	 * @memberof Session
 	 */
 	setData(key, value) {
+		if (typeof key !== "string") throw new Error("The key must be a string");
+		if (typeof value === "undefined") throw new Error("The value must be defined");
 		let saveData = this.getAll();
 		saveData[key] = value;
 		this.updateAll(saveData);
@@ -91,6 +95,7 @@ export default class Session {
 	 * @memberof Session
 	 */
 	updateAll(data) {
+		if (typeof data === "undefined") throw new Error("The data must be defined");
 		sessionStorage.setItem(this.name, JSON.stringify(data));
 	}
 
@@ -104,6 +109,7 @@ export default class Session {
 	 * @memberof Session
 	 */
 	removeData(key) {
+		if (typeof key !== "string") throw new Error("The key must be a string");
 		let saveData = this.getAll();
 		delete saveData[key];
 		this.updateAll(saveData);
@@ -118,6 +124,7 @@ export default class Session {
 	 * @memberof Session
 	 */
 	changeSaveDataName(name = this.name) {
+		if (typeof name !== "string") throw new Error("The name must be a string");
 		let saveData = this.getAll();
 		sessionStorage.removeItem(this.name);
 		this.setName(name);
@@ -163,14 +170,17 @@ export default class Session {
 	 * @returns {boolean} true if the key is stored
 	 * @memberof Session
 	 */
-	has(key) { return this.keys().includes(key); }
+	has(key) {
+		if (typeof key !== "string") throw new Error("The key must be a string");
+		return this.keys().includes(key);
+	}
 
 	/**
 	 * Check if the Session storage is empty
 	 * 
 	 * @example Session.isEmpty();
 	 * 
-	 * @returns {boolean} true if the Session storage is empty
+	 * @returns {boolean} - true if the Session storage is empty
 	 * @memberof Session
 	 */
 	isEmpty() { return this.size() === 0; }

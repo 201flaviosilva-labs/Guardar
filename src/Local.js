@@ -31,6 +31,7 @@ export default class Local {
 	 * @memberof Local
 	 */
 	setName(newSaveDataName = this.name) {
+		if (typeof newSaveDataName !== "string") throw new Error("The name must be a string");
 		this.name = newSaveDataName;
 		this._init();
 	}
@@ -57,6 +58,7 @@ export default class Local {
 	 * @memberof Local
 	 */
 	getData(key) {
+		if (typeof key !== "string") throw new Error("The key must be a string");
 		let data = this.getAll();
 		return data[key];
 	}
@@ -71,11 +73,13 @@ export default class Local {
 	 * @example Local.setData("myKeyArr", [1, 2, 3, 4, 5]);
 	 * 
 	 * @param {string} key - name of the key
-	 * @param {any} value value of the item
+	 * @param {any} value - value of the item
 	 * @returns {void}
 	 * @memberof Local
 	 */
 	setData(key, value) {
+		if (typeof key !== "string") throw new Error("The key must be a string");
+		if (typeof value === "undefined") throw new Error("The value must be defined");
 		let saveData = this.getAll();
 		saveData[key] = value;
 		this.updateAll(saveData);
@@ -91,6 +95,7 @@ export default class Local {
 	 * @memberof Local
 	 */
 	updateAll(data) {
+		if (typeof data === "undefined") throw new Error("The data must be defined");
 		localStorage.setItem(this.name, JSON.stringify(data));
 	}
 
@@ -104,6 +109,7 @@ export default class Local {
 	 * @memberof Local
 	 */
 	removeData(key) {
+		if (typeof key !== "string") throw new Error("The key must be a string");
 		let saveData = this.getAll();
 		delete saveData[key];
 		this.updateAll(saveData);
@@ -118,6 +124,7 @@ export default class Local {
 	 * @memberof Local
 	 */
 	changeSaveDataName(name = this.name) {
+		if (typeof name !== "string") throw new Error("The name must be a string");
 		let saveData = this.getAll();
 		localStorage.removeItem(this.name);
 		this.setName(name);
@@ -163,14 +170,17 @@ export default class Local {
 	 * @returns {boolean} true if the key is stored
 	 * @memberof Local
 	 */
-	has(key) { return this.keys().includes(key); }
+	has(key) {
+		if (typeof key !== "string") throw new Error("The key must be a string");
+		return this.keys().includes(key);
+	}
 
 	/**
 	 * Check if the local storage is empty
 	 * 
 	 * @example Local.isEmpty();
 	 * 
-	 * @returns {boolean} true if the local storage is empty
+	 * @returns {boolean} - true if the local storage is empty
 	 * @memberof Local
 	 */
 	isEmpty() { return this.size() === 0; }
