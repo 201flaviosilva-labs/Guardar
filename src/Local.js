@@ -24,16 +24,20 @@ export default class Local {
 	/**
 	 * Change the name of data saved in the local storage
 	 * 
-	 * @example Local._init("myLocalStorage");
+	 * @example Local.setName("myLocalStorage");
 	 * 
-	 * @param {string} newSaveDataName - the name to save the data in the local storage
+	 * @param {string} name - the name to save the data in the local storage
 	 * @returns {void}
 	 * @memberof Local
 	 */
-	setName(newSaveDataName = this.name) {
-		if (typeof newSaveDataName !== "string") throw new Error("The name must be a string");
-		this.name = newSaveDataName;
+	setName(name = this.name) {
+		if (typeof name !== "string") throw new Error("The name must be a string");
+		const saveData = this.getAll();
+		localStorage.removeItem(name);
+		localStorage.removeItem(this.name);
+		this.name = name;
 		this._init();
+		this.updateAll(saveData);
 	}
 
 	/**
@@ -42,7 +46,7 @@ export default class Local {
 	 * @example Local.getAll();
 	 * 
 	 * @param {boolean} [json=false] - if true, return the data in json format
-	 * @returns {object} the data saved in the local storage
+	 * @returns {any} the data saved in the local storage
 	 * @memberof Local
 	 */
 	getAll(json = false) {
@@ -115,22 +119,6 @@ export default class Local {
 		if (typeof key !== "string") throw new Error("The key must be a string");
 		let saveData = this.getAll();
 		delete saveData[key];
-		this.updateAll(saveData);
-	}
-
-	/**
-	 * Change the name of the local storage
-	 * 
-	 * @example Local.changeSaveDataName("myNewLocalStorageName");
-	 * 
-	 * @param {sting} name - new name of the local storage
-	 * @memberof Local
-	 */
-	changeSaveDataName(name = this.name) {
-		if (typeof name !== "string") throw new Error("The name must be a string");
-		let saveData = this.getAll();
-		localStorage.removeItem(this.name);
-		this.setName(name);
 		this.updateAll(saveData);
 	}
 

@@ -11,8 +11,10 @@ function getVersion() { return version; }
 
 const Guardar = {
 	getVersion,
-	Local: new Local(),
-	Session: new Session(),
+	Local,
+	Session,
+	LocalInstance: new Local(),
+	SessionInstance: new Session(),
 };
 
 export default Guardar;
