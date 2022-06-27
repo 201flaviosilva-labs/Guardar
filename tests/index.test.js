@@ -12,12 +12,14 @@ describe("index.js", () => {
 	describe("Local", () => {
 		test("should return Local object", () => {
 			expect(Guardar.Local).toBeInstanceOf(Object);
+			expect(Guardar.LocalInstance).toBeInstanceOf(Object);
 		});
 	});
 
 	describe("Session", () => {
 		test("should return Session object", () => {
 			expect(Guardar.Session).toBeInstanceOf(Object);
+			expect(Guardar.SessionInstance).toBeInstanceOf(Object);
 		});
 	});
 });

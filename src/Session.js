@@ -24,16 +24,20 @@ export default class Session {
 	/**
 	 * Change the name of data saved in the Session storage
 	 * 
-	 * @example Session._init("mySessionStorage");
+	 * @example Session.setName("mySessionStorage");
 	 * 
-	 * @param {string} newSaveDataName - the name to save the data in the Session storage
+	 * @param {string} name - the name to save the data in the Session storage
 	 * @returns {void}
 	 * @memberof Session
 	 */
-	setName(newSaveDataName = this.name) {
-		if (typeof newSaveDataName !== "string") throw new Error("The name must be a string");
-		this.name = newSaveDataName;
+	setName(name = this.name) {
+		if (typeof name !== "string") throw new Error("The name must be a string");
+		const saveData = this.getAll();
+		sessionStorage.removeItem(name);
+		sessionStorage.removeItem(this.name);
+		this.name = name;
 		this._init();
+		this.updateAll(saveData);
 	}
 
 	/**
@@ -42,10 +46,10 @@ export default class Session {
 	 * @example Session.getAll();
 	 * 
 	 * @param {boolean} [json=false] - if true, return the data in json format
-	 * @returns {object} the data saved in the Session storage
+	 * @returns {any} the data saved in the local storage
 	 * @memberof Session
 	 */
-	getAll() {
+	getAll(json = false) {
 		if (typeof json !== "boolean") throw new Error("The json must be a boolean");
 		const data = sessionStorage.getItem(this.name);
 		return json ? data : JSON.parse(data);
@@ -115,22 +119,6 @@ export default class Session {
 		if (typeof key !== "string") throw new Error("The key must be a string");
 		let saveData = this.getAll();
 		delete saveData[key];
-		this.updateAll(saveData);
-	}
-
-	/**
-	 * Change the name of the Session storage
-	 * 
-	 * @example Session.changeSaveDataName("sessionStorageName");
-	 * 
-	 * @param {sting} name - new name of the Session storage
-	 * @memberof Session
-	 */
-	changeSaveDataName(name = this.name) {
-		if (typeof name !== "string") throw new Error("The name must be a string");
-		let saveData = this.getAll();
-		sessionStorage.removeItem(this.name);
-		this.setName(name);
 		this.updateAll(saveData);
 	}
 

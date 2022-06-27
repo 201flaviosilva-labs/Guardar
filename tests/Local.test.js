@@ -23,7 +23,7 @@ describe("Local", () => {
 	describe("setName", () => {
 		beforeEach(() => reset("guardar", false));
 
-		it("should fail if the name is not a strring", () => {
+		it("should fail if the name is not a string", () => {
 			expect(() => LocalInst.setName(42)).toThrowError("The name must be a string");
 		});
 
