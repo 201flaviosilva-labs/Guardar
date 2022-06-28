@@ -31,8 +31,9 @@
   },
   "keywords": [
     "storage",
-    "localstorage",
-    "sessionstorage"
+    "browser",
+    "localStorage",
+    "sessionStorage"
   ],
   "repository": {
     "type": "git",
