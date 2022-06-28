@@ -3,13 +3,13 @@ const path = require("path");
 module.exports = {
 	mode: "production",
 	entry: "./src/index.js",
-	// optimization: { minimize: false, },
-	optimization: { minimize: true, },
+	optimization: { minimize: false, },
+	// optimization: { minimize: true, },
 	experiments: { outputModule: true, },
 	output: {
 		path: path.resolve("build"),
-		// filename: "Guardar.js",
-		filename: "Guardar.min.js",
+		filename: "Guardar.js",
+		// filename: "Guardar.min.js",
 		libraryTarget: "module", // module/commonjs2/window // https://webpack.js.org/configuration/output/#outputlibrarytarget
 	},
 	module: {
