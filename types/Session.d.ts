@@ -17,22 +17,23 @@ export default class Session {
     /**
      * Change the name of data saved in the Session storage
      *
-     * @example Session._init("mySessionStorage");
+     * @example Session.setName("mySessionStorage");
      *
-     * @param {string} newSaveDataName - the name to save the data in the Session storage
+     * @param {string} name - the name to save the data in the Session storage
      * @returns {void}
      * @memberof Session
      */
-    setName(newSaveDataName?: string): void;
+    setName(name?: string): void;
     /**
      * Get all data saved in the Session storage
      *
      * @example Session.getAll();
      *
-     * @returns {object} the data saved in the Session storage
+     * @param {boolean} [json=false] - if true, return the data in json format
+     * @returns {any} the data saved in the local storage
      * @memberof Session
      */
-    getAll(): object;
+    getAll(json?: boolean): any;
     /**
      * Get a specific data saved in the Session storage
      *
@@ -53,7 +54,7 @@ export default class Session {
      * @example Session.setData("myKeyArr", [1, 2, 3, 4, 5]);
      *
      * @param {string} key - name of the key
-     * @param {any} value value of the item
+     * @param {any} value - value of the item
      * @returns {void}
      * @memberof Session
      */
@@ -78,15 +79,6 @@ export default class Session {
      * @memberof Session
      */
     removeData(key: sting): void;
-    /**
-     * Change the name of the Session storage
-     *
-     * @example Session.changeSaveDataName("sessionStorageName");
-     *
-     * @param {sting} name - new name of the Session storage
-     * @memberof Session
-     */
-    changeSaveDataName(name?: sting): void;
     /**
      * Delete all data saved in the Session storage
      *
@@ -129,7 +121,7 @@ export default class Session {
      *
      * @example Session.isEmpty();
      *
-     * @returns {boolean} true if the Session storage is empty
+     * @returns {boolean} - true if the Session storage is empty
      * @memberof Session
      */
     isEmpty(): boolean;
