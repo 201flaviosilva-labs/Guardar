@@ -4,7 +4,7 @@
   "description": "A simple lib to work and organize the browser storage",
   "author": "201flaviosilva",
   "homepage": "https://201flaviosilva.github.io/Guardar/",
-  "main": "build/Guardar.js",
+  "main": "src/index.js",
   "license": "MIT",
   "scripts": {
     "clear": "rm -rf docs && rm -rf build && rm -rf types",
