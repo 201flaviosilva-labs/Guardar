@@ -1,1 +1,1 @@
-[NPM](https://www.npmjs.com/package/guardar) - [Wiki](https://github.com/201flaviosilva/Guardar/wiki) - [API](https://201flaviosilva.github.io/Guardar/) - [GitHub](https://github.com/201flaviosilva/Guardar)
+[NPM](https://www.npmjs.com/package/guardar) - [Wiki](https://github.com/201flaviosilva-labs/Guardar/wiki) - [API](https://201flaviosilva-labs.github.io/Guardar/) - [GitHub](https://github.com/201flaviosilva-labs/Guardar)

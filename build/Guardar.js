@@ -28,7 +28,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// CONCATENATED MODULE: ./package.json
-const package_namespaceObject = {"i8":"2.0.0"};
+const package_namespaceObject = {"i8":"2.0.2"};
 ;// CONCATENATED MODULE: ./src/Local.js
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 

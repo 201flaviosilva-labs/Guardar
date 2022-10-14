@@ -14,12 +14,12 @@
 A simple lib to work and organize the localstorage.
 
 [![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/guardar)
-[![GitHub](https://img.shields.io/badge/github-CB3837?style=for-the-badge&logo=github&logoColor=white)](https://github.com/201flaviosilva/Guardar)
+[![GitHub](https://img.shields.io/badge/github-CB3837?style=for-the-badge&logo=github&logoColor=white)](https://github.com/201flaviosilva-labs/Guardar)
 
 
 ## Simple Example
 
-Please check the [wiki](https://github.com/201flaviosilva/Guardar/wiki) and the [API](https://201flaviosilva.github.io/Guardar/) to see how to use this lib.
+Please check the [wiki](https://github.com/201flaviosilva-labs/Guardar/wiki) and the [API](https://201flaviosilva-labs.github.io/Guardar/) to see how to use this lib.
 
 ### Instal
 
@@ -56,14 +56,14 @@ console.log(Local.getAll());
 
 ## Community Links
 - [NPM package page](https://www.npmjs.com/package/guardar);
-- [Wiki (Documentation)](https://github.com/201flaviosilva/Guardar/wiki);
-- - [Getting Started](https://github.com/201flaviosilva/Guardar/wiki/GetStarted);
-- - [Cheat Sheet](https://github.com/201flaviosilva/Guardar/wiki/CheatSheet);
-- - [Available Commands](https://github.com/201flaviosilva/Guardar/wiki/AvailableCommands);
-- - [Custom Build](https://github.com/201flaviosilva/Guardar/wiki/CustomBuild);
-- [JS Docs API](https://201flaviosilva.github.io/Guardar/);
-- [GitHub](https://github.com/201flaviosilva/Guardar);
-  - [Issues](https://github.com/201flaviosilva/Guardar/issues);
-  - [Pull Requests](https://github.com/201flaviosilva/Guardar/pulls);
+- [Wiki (Documentation)](https://github.com/201flaviosilva-labs/Guardar/wiki);
+- - [Getting Started](https://github.com/201flaviosilva-labs/Guardar/wiki/GetStarted);
+- - [Cheat Sheet](https://github.com/201flaviosilva-labs/Guardar/wiki/CheatSheet);
+- - [Available Commands](https://github.com/201flaviosilva-labs/Guardar/wiki/AvailableCommands);
+- - [Custom Build](https://github.com/201flaviosilva-labs/Guardar/wiki/CustomBuild);
+- [JS Docs API](https://201flaviosilva-labs.github.io/Guardar/);
+- [GitHub](https://github.com/201flaviosilva-labs/Guardar);
+  - [Issues](https://github.com/201flaviosilva-labs/Guardar/issues);
+  - [Pull Requests](https://github.com/201flaviosilva-labs/Guardar/pulls);
 - [Code Sandbox Examples](https://codesandbox.io/examples/package/guardar);
 - [CHANGELOG](./CHANGELOG.md);
